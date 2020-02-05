@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 
+import static com.example.myapplication.Utility.RESULTS;
+import static com.example.myapplication.Utility.SAAD;
 import static com.example.myapplication.Utility.retunToMain;
 
 public class Question_2_Activity extends AppCompatActivity {
@@ -18,11 +20,11 @@ public class Question_2_Activity extends AppCompatActivity {
 
         Utility.setRootView(findViewById(android.R.id.content).getRootView(), getPackageName());
         Utility.setImageResource(R.drawable.saad);
-        Utility.setRadioButtonOptions("saad");
+        Utility.setRadioButtonOptions(SAAD);
 
 
         Intent i = getIntent();
-        totalResults = i.getIntExtra("results", 0);
+        totalResults = i.getIntExtra(RESULTS, 0);
     }
 
     public void onRadioBClicked(View view) {

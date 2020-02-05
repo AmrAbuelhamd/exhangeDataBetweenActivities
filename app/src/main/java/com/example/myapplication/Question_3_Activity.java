@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 
+import static com.example.myapplication.Utility.RESULTS;
+import static com.example.myapplication.Utility.ZUBAIDA;
 import static com.example.myapplication.Utility.retunToMain;
 
 public class Question_3_Activity extends AppCompatActivity {
@@ -19,11 +21,11 @@ public class Question_3_Activity extends AppCompatActivity {
 
         Utility.setRootView(findViewById(android.R.id.content).getRootView(), getPackageName());
         Utility.setImageResource(R.drawable.zubaida);
-        Utility.setRadioButtonOptions("zubayda");
+        Utility.setRadioButtonOptions(ZUBAIDA);
 
 
         Intent i = getIntent();
-        totalResults = i.getIntExtra("results", 0);
+        totalResults = i.getIntExtra(RESULTS, 0);
 //set the quesiton
 
     }

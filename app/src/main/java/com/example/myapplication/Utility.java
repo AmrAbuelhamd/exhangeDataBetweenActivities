@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 public class Utility {
 
+    final static String ZUBAIDA = "zubayda";
+    final static String SAAD= "saad";
+    final static String GAADA= "ghada";
+    final static String RESULTS = "results";
     private static View mRootView;
     private static String mPackName;
 

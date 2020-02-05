@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import static com.example.myapplication.Utility.RESULTS;
 import static com.example.myapplication.Utility.retunToMain;
 
 public class ResultActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class ResultActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView3);
 
         Intent i = getIntent();
-        int totalResults = i.getIntExtra("results", 0);
+        int totalResults = i.getIntExtra(RESULTS, 0);
 
         textView.setText(totalResults + "/3");
     }
