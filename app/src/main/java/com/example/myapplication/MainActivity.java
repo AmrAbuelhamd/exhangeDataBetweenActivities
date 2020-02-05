@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startTheTest(View view) {
-        Intent myIntent = new Intent(this, Question_1_Activity.class);
+        Intent myIntent = new Intent(this, QuestionActivity.class);
+        myIntent.putExtra(Utility.questionId, Utility.question);
         this.startActivity(myIntent);
     }
 

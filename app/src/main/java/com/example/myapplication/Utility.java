@@ -14,15 +14,23 @@ public class Utility {
     final static String SAAD= "saad";
     final static String GAADA= "ghada";
     final static String RESULTS = "results";
+    final static int QUESTION_ONE = 1;
+    final static int QUESTION_TWO = 2;
+    static int result = 0;
+    static String questionId = "question";
+    static int question = 1;
+
+
     private static View mRootView;
     private static String mPackName;
+
 
     public static void setRootView(View rootView, String packName) {
         mRootView = rootView;
         mPackName = packName;
     }
 
-    static public void setImageResource(int resource) {
+    private static void setImageResource(int resource) {
         ImageView imageView;
 
         imageView = mRootView.findViewById(R.id.imageView);
@@ -52,9 +60,9 @@ public class Utility {
     }
 
 
-    public static void toNext(int x, Context context, final Class<? extends Activity> ActivityToOpen) {
+    public static void toNext(Context context, final Class<? extends Activity> ActivityToOpen) {
         Intent myIntent = new Intent(context, ActivityToOpen);
-        myIntent.putExtra("results", x);
+        myIntent.putExtra(Utility.questionId, Utility.question);
         context.startActivity(myIntent);
     }
 
@@ -70,5 +78,10 @@ public class Utility {
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    public static void prepareLayout(int drawble, String actorNAme) {
+        setImageResource(drawble);
+        setRadioButtonOptions(actorNAme);
     }
 }
