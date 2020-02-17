@@ -14,17 +14,17 @@
         android:layout_height="wrap_content"
         android:background="@drawable/white_circle_drawable"
         android:onClick="startTheTest"
+        android:text="@string/start"
         android:textAlignment="center"
         android:textColor="#38006B"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:text="@string/start" />
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_chainStyle="packed" />
     <!--the line up make them together instead of spreading them-->
 
     <Button
