@@ -1,24 +1,39 @@
 <resources>
     <string name="app_name">Quiz</string>
 
-    <string name="ghada_0">The most famous film for her?</string>
-    <string name="ghada_1">Boss Omar</string>
-    <string name="ghada_2">Faoziya Mix</string>
-    <string name="ghada_3">Crisis</string>
 
-    <string name="saad_0">which one is considered a supreme work of her?</string>
-    <string name="saad_1">Ihsan Shehata</string>
-    <string name="saad_2">The Second wife</string>
-    <string name="saad_3">The Karnak</string>
+    <!--in my arrays first goes the question then the answers-->
 
-    <string name="zubayda_0">What was her job?</string>
-    <string name="zubayda_1">Dancer</string>
-    <string name="zubayda_2">Actress</string>
-    <string name="zubayda_3">Model</string>
+    <string-array name="ghada">
+        <item>The most famous film for her?</item>
+        <item>Boss Omar</item>
+        <item>Faoziya Mix</item>
+        <item>Crisis</item>
+    </string-array>
+
+    <string-array name="saad">
+        <item>which one is considered a supreme work of her?</item>
+        <item>Ihsan Shehata</item>
+        <item>The The Second wife</item>
+        <item>The Karnak</item>
+    </string-array>
+
+    <string-array name="zubayda">
+        <item>What was her job?</item>
+        <item>Dancer</item>
+        <item>Actress</item>
+        <item>Model</item>
+    </string-array>
+
+
     <string name="start">Start</string>
     <string name="time">Time</string>
-    <string name="quize">Quize</string>
+    <string name="quiz">Quiz</string>
     <string name="results">RESULTS</string>
     <string name="again">Again</string>
     <string name="leave">Leave</string>
+    <string name="answers_hint">the Right answers are 1 then 2 then ..</string>
+    <string name="click_to_show_hint">click the time for a hint</string>
+    <string name="max_grade">/3</string>
+    <string name="result_placeholder">3/3</string>
 </resources>

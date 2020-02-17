@@ -5,27 +5,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import static com.example.myapplication.Utility.retunToMain;
-
 public class ResultActivity extends AppCompatActivity {
     TextView textView;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results);
 
-        textView = findViewById(R.id.textView3);
+        textView = findViewById(R.id.resultTextView);
 
-        textView.setText(Utility.result + "/3");
-        Utility.result = 0;
+        String results = Utility.result + getString(R.string.max_grade);
+        textView.setText(results);
     }
 
     public void onBackPressed() {
-        retunToMain(this);
+        Utility.rerunToMain(this);
     }
 
     public void goHome(View view) {
-        retunToMain(this);
+        Utility.rerunToMain(this);
     }
 
     public void exit(View view) {

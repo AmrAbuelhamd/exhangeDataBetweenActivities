@@ -3,17 +3,17 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class Utility {
-
+    static int firstStart = 1;
     final static String ZUBAIDA = "zubayda";
     final static String SAAD= "saad";
     final static String GAADA= "ghada";
-    final static String RESULTS = "results";
     final static int QUESTION_ONE = 1;
     final static int QUESTION_TWO = 2;
     static int result = 0;
@@ -38,24 +38,23 @@ public class Utility {
 
     }
 
-    public static void setRadioButtonOptions(String x) {
+    public static void setRadioButtonOptions(String actorName) {
 
         RadioButton rb1, rb2, rb3;
         TextView question;
-        rb1 = mRootView.findViewById(R.id._1);
-        rb2 = mRootView.findViewById(R.id._2);
-        rb3 = mRootView.findViewById(R.id._3);
+        rb1 = mRootView.findViewById(R.id.firstRadioButton);
+        rb2 = mRootView.findViewById(R.id.secondRadioButton);
+        rb3 = mRootView.findViewById(R.id.thirdRadioButton);
         question = mRootView.findViewById(R.id.question);
 
-        int resourceId0 = mRootView.getResources().getIdentifier(x + "_0", "string", mPackName);
-        int resourceId1 = mRootView.getResources().getIdentifier(x + "_1", "string", mPackName);
-        int resourceId2 = mRootView.getResources().getIdentifier(x + "_2", "string", mPackName);
-        int resourceId3 = mRootView.getResources().getIdentifier(x + "_3", "string", mPackName);
+        Resources res = mRootView.getResources();
+        int questionDetails = res.getIdentifier(actorName, "array", mPackName);
+        String[] arrayOfQuestionAndAnswers = res.getStringArray(questionDetails);
 
-        question.setText(resourceId0);
-        rb1.setText(resourceId1);
-        rb2.setText(resourceId2);
-        rb3.setText(resourceId3);
+        question.setText(arrayOfQuestionAndAnswers[0]);//first is always the question
+        rb1.setText(arrayOfQuestionAndAnswers[1]);
+        rb2.setText(arrayOfQuestionAndAnswers[2]);
+        rb3.setText(arrayOfQuestionAndAnswers[3]);
 
     }
 
@@ -67,7 +66,7 @@ public class Utility {
     }
 
 
-    static void retunToMain(Context context) {
+    static void rerunToMain(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
@@ -80,8 +79,8 @@ public class Utility {
         context.startActivity(intent);
     }
 
-    public static void prepareLayout(int drawble, String actorNAme) {
-        setImageResource(drawble);
+    public static void prepareLayout(int drawable, String actorNAme) {
+        setImageResource(drawable);
         setRadioButtonOptions(actorNAme);
     }
 }

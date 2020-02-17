@@ -74,5 +74,5 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        android:text="@string/quize" />
+        android:text="@string/quiz" />
 </android.support.constraint.ConstraintLayout>

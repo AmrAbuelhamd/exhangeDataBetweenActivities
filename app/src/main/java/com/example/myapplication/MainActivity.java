@@ -13,7 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "click the time for a hint", Toast.LENGTH_SHORT).show();
+        //reset the values
+        Utility.result = 0;
+        Utility.question = 1;
+        if(Utility.firstStart++==1)
+            Toast.makeText(this, R.string.click_to_show_hint, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getHInt(View view) {
-        Toast.makeText(this, "the Right answers are 1 then 2 then ..", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.answers_hint, Toast.LENGTH_SHORT).show();
     }
 
     public void exit(View view) {

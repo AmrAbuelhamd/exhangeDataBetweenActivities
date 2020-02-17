@@ -5,16 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 
-import static com.example.myapplication.Utility.GAADA;
-import static com.example.myapplication.Utility.QUESTION_ONE;
-import static com.example.myapplication.Utility.QUESTION_TWO;
-import static com.example.myapplication.Utility.SAAD;
-import static com.example.myapplication.Utility.ZUBAIDA;
-import static com.example.myapplication.Utility.prepareLayout;
-import static com.example.myapplication.Utility.question;
-import static com.example.myapplication.Utility.questionId;
-import static com.example.myapplication.Utility.retunToMain;
-import static com.example.myapplication.Utility.setRootView;
 
 public class QuestionActivity extends AppCompatActivity {
     int questionNumer;
@@ -24,19 +14,19 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_layout);
 
-        questionNumer = getIntent().getIntExtra(questionId, 0);
+        questionNumer = getIntent().getIntExtra(Utility.questionId, 0);
         //updateQuestionIdAndNumber
-        question++;
+        Utility.question++;
 
-        setRootView(findViewById(android.R.id.content).getRootView(), getPackageName());
+        Utility.setRootView(findViewById(android.R.id.content).getRootView(), getPackageName());
 
-        if (questionNumer == QUESTION_ONE) {
-            prepareLayout(R.drawable.ghada, GAADA);
+        if (questionNumer == Utility.QUESTION_ONE) {
+            Utility.prepareLayout(R.drawable.ghada, Utility.GAADA);
 
-        } else if (questionNumer == QUESTION_TWO) {
-            prepareLayout(R.drawable.saad, SAAD);
+        } else if (questionNumer == Utility.QUESTION_TWO) {
+            Utility.prepareLayout(R.drawable.saad, Utility.SAAD);
         } else {
-            prepareLayout(R.drawable.zubaida, ZUBAIDA);
+            Utility.prepareLayout(R.drawable.zubaida, Utility.ZUBAIDA);
         }
 
 
@@ -48,23 +38,23 @@ public class QuestionActivity extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        if (questionNumer == QUESTION_ONE) {
+        if (questionNumer == Utility.QUESTION_ONE) {
 
-            if (view.getId() == R.id._1 && checked)
+            if (view.getId() == R.id.firstRadioButton && checked)
                 Utility.result++;
 
             Utility.toNext(this, QuestionActivity.class);
 
-        } else if (questionNumer == QUESTION_TWO) {
+        } else if (questionNumer == Utility.QUESTION_TWO) {
 
-            if (view.getId() == R.id._2 && checked)
+            if (view.getId() == R.id.secondRadioButton && checked)
                 Utility.result++;
 
             Utility.toNext(this, QuestionActivity.class);
 
         } else {
-            question = 1;
-            if (checked && view.getId() == R.id._3)
+            Utility.question = 1;
+            if (checked && view.getId() == R.id.thirdRadioButton)
 
                 Utility.result++;
             Utility.toNext(this, ResultActivity.class);
@@ -74,8 +64,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     public void onBackPressed() {
-
-        retunToMain(this);
+        Utility.rerunToMain(this);
     }
 
 

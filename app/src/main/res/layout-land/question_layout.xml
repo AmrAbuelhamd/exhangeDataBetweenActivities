@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.59000003">
 
         <RadioButton
-            android:id="@+id/_1"
+            android:id="@+id/firstRadioButton"
             android:layout_width="320dp"
             android:layout_height="61dp"
             android:layout_margin="10dp"
@@ -70,7 +70,7 @@
             tools:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/_2"
+            android:id="@+id/secondRadioButton"
 
             android:layout_width="320dp"
             android:layout_height="61dp"
@@ -86,7 +86,7 @@
 
 
         <RadioButton
-            android:id="@+id/_3"
+            android:id="@+id/thirdRadioButton"
 
             android:layout_width="320dp"
             android:layout_height="61dp"
